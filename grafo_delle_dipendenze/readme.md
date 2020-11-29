@@ -27,9 +27,9 @@ compilazione**. Un ulteriore programma deve generare i processi
 P1\...P6, tramite l'uso delle primitive `fork()` ed `exec()`, ed
 attenderne la terminazione.
 
-Utilizzare 4 code di messaggi come in figura. I processi P1, P2, P3 e P4
-usano la prima coppia di code. Per fare in modo che i processi P2, P3 e P4
-ricevano gli operandi ad essi destinati (es., **a** e **b** devono essere
+Una possibile soluzione è di utilizzare 4 code di messaggi come nella seconda figura. 
+I processi P1, P2, P3 e P4 usano la prima coppia di code. Per fare in modo che i 
+processi P2, P3 e P4 ricevano gli operandi ad essi destinati (es., **a** e **b** devono essere
 ricevuti da P2), il processo P1 deve indicare il destinatario nel campo **tipo**
 del messaggio con gli operandi (es., scrivendo il valore `2').
 Nei messaggi di risposta, i processi possono indicare il proprio identificativo
@@ -55,4 +55,8 @@ File da modificare:
 
 ![image](https://github.com/rnatella/esercizi_linux/blob/master/images/ambiente_locale/code_messaggi/grafo_delle_dipendenze.png)
 
+
+
 ![image](https://github.com/rnatella/esercizi_linux/blob/master/images/ambiente_locale/code_messaggi/grafo_delle_dipendenze_code.png)
+
+
