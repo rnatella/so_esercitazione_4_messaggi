@@ -55,8 +55,8 @@ File da modificare:
 
 ![image](https://github.com/rnatella/esercizi_linux/blob/master/images/ambiente_locale/code_messaggi/grafo_delle_dipendenze.png)
 
-` `  
-` `  
+\ 
+\ 
 
 ![image](https://github.com/rnatella/esercizi_linux/blob/master/images/ambiente_locale/code_messaggi/grafo_delle_dipendenze_code.png)
 
