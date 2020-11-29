@@ -32,8 +32,8 @@ usano la prima coppia di code. Per fare in modo che i processi P2, P3 e P4
 ricevano gli operandi ad essi destinati (es., **a** e **b** devono essere
 ricevuti da P2), il processo P1 deve indicare il destinatario nel campo **tipo**
 del messaggio con gli operandi (es., scrivendo il valore `2').
-Nei messaggi di risposta, i processi possono indicare P1 nel campo **tipo**.
-I processi P3, P5 e P6 usano la seconda coppia di code, analogamente.
+Nei messaggi di risposta, i processi possono indicare il proprio identificativo
+nel campo **tipo**. I processi P3, P5 e P6 usano la seconda coppia di code, analogamente.
 
 **Suggerimento:** I messaggi che sono inviati su una stessa coda devono avere
 tutti la stessa dimensione. Per ogni coda, definire una `struct' differente per
@@ -52,5 +52,7 @@ File da modificare:
 - p5.c
 - p6.c
 
+
+![image](https://github.com/rnatella/esercizi_linux/blob/master/images/ambiente_locale/code_messaggi/grafo_delle_dipendenze.png)
 
 ![image](https://github.com/rnatella/esercizi_linux/blob/master/images/ambiente_locale/code_messaggi/grafo_delle_dipendenze_code.png)
