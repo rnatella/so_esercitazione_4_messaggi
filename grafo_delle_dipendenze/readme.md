@@ -31,16 +31,16 @@ Una possibile soluzione è di utilizzare 4 code di messaggi come nella seconda f
 I processi P1, P2, P3 e P4 usano la prima coppia di code. Per fare in modo che i 
 processi P2, P3 e P4 ricevano gli operandi ad essi destinati (es., **a** e **b** devono essere
 ricevuti da P2), il processo P1 deve indicare il destinatario nel campo **tipo**
-del messaggio con gli operandi (es., scrivendo il valore `2').
+del messaggio con gli operandi (es., scrivendo il valore `2`).
 Nei messaggi di risposta, i processi possono indicare il proprio identificativo
 nel campo **tipo**. I processi P3, P5 e P6 usano la seconda coppia di code, analogamente.
 
 **Suggerimento:** I messaggi che sono inviati su una stessa coda devono avere
-tutti la stessa dimensione. Per ogni coda, definire una `struct' differente per
+tutti la stessa dimensione. Per ogni coda, definire una `struct` specifica per
 i messaggi da inviare su quella coda. Ad esempio, si definisca una `struct` per
 i messaggi per la coda degli operandi \#1, includendo 4 variabili di tipo intero. 
 Per gli operandi destinati a P3, si utilizzeranno tutti le 4 variabili. Per gli
-operandi destinati a P2 e P4, si utilizzeranno solo 2 delle 4 variabili. 
+operandi destinati a P2 e P4, si utilizzeranno solo 2 delle 4 variabili.
 
 File da modificare:
 - start.c
