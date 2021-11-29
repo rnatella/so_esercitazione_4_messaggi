@@ -6,7 +6,7 @@
 #include "registro.h"
 
 void server(int id_coda_registro_richieste, int id_coda_registro_risposte, int id_server) {
-    
+
     printf("Registro: Server...\n");
 
     int risorsa = 0;
@@ -17,8 +17,8 @@ void server(int id_coda_registro_richieste, int id_coda_registro_risposte, int i
 
     /* TBD: Inviare messaggio di BIND al registro,
      *      tramite la coda "id_coda_registro_richieste",
-     *      e includereo nel messaggio lo ID della 
-     *      coda privata del server "id_coda_server" 
+     *      e includere nel messaggio lo ID della
+     *      coda privata del server "id_coda_server"
      */
 
 
@@ -28,8 +28,8 @@ void server(int id_coda_registro_richieste, int id_coda_registro_risposte, int i
 
         /* TBD: Prelevare un messaggio dalla coda del server */
 
-        
-        
+
+
         if(/* TBD: Messaggio di tipo SERVICE */) {
 
             printf("Server: Ricevuto messaggio SERVICE (id_server=%d, valore=%d)\n", id_server, /* TBD */);
