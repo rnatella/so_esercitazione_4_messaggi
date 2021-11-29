@@ -12,11 +12,11 @@ void client(int id_coda_registro_richieste, int id_coda_registro_risposte) {
 
     srand(getpid());
 
-    int id_server = rand() % 2; // Sceglie un server a casl
+    int id_server = rand() % 2; // Sceglie un server a caso
 
     printf("Client: Invio messaggio QUERY (id_server=%d)\n", id_server);
 
-    /* TBD: Inviare un messaggio di tipo QUERY al registro, 
+    /* TBD: Inviare un messaggio di tipo QUERY al registro,
      *      tramite la coda "id_coda_registro_richieste"
      */
 
