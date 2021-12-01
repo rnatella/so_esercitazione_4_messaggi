@@ -28,6 +28,11 @@ riceve il messaggio con la coppia di valori {-1,-1}, termina.
 
 ![image](https://github.com/rnatella/esercizi_linux/blob/master/images/ambiente_locale/server_multithread/un_primo_esempio_di_server_multithread.png)
 
+**Nota:*** Il sistema operativo garantisce già da solo l'assenza di race condition
+sulle code di messaggi. La mutua esclusione è un requisito artificiale dell'esercizio,
+ai fini di utilizzare un mutex nel contesto di un server multi-threaded.
+
+
 ### Soluzione 
 
 ``` {caption="Pseudo-codice del programma principale"}
