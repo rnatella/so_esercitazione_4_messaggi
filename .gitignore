@@ -1,1 +1,14 @@
+*.o
+.vscode
 .DS_Store
+p1
+p2
+p3
+p4
+p5
+p6
+start
+programma
+client
+server
+main
