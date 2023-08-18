@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Load balancing",
+      "setup": "pip3 -qqq install semgrep && sudo apt -qq install expect 2>/dev/null >/dev/null",
+      "run": "/bin/bash ./load_balancing/.test/load-balancing.sh",
+      "input": "",
+      "output": "pass",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Server sincroni multipli",
+      "setup": "",
+      "run": "/bin/bash  ./server_sincroni_multiplii/.test/server-sincroni-multipli.sh",
+      "input": "",
+      "output": "pass",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Grafo delle dipendenze",
+      "setup": "",
+      "run": "/bin/bash  ./grafo_delle_dipendenze/.test/grafo.sh",
+      "input": "",
+      "output": "pass",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Registro distribuito",
+      "setup": "",
+      "run": "/bin/bash  ./registro_distribuito/.test/registro.sh",
+      "input": "",
+      "output": "pass",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
