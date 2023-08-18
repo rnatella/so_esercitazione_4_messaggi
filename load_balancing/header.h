@@ -4,11 +4,11 @@
 #include <sys/types.h>
 
 #define TOTALE_SERVER 3
-#define TOTALE_CLIENT 8
-#define TOTALE_MESSAGGI 15
+#define TOTALE_CLIENT 2
+#define TOTALE_MESSAGGI 6
 
 
-/* TBD: definire una struttura per i messaggi, 
+/* TBD: definire una struttura per i messaggi,
         includendo un campo intero in cui inserire
 		il PID del mittente.
  */
