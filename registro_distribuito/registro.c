@@ -6,7 +6,7 @@
 #include "registro.h"
 
 void registro(int id_coda_registro_richieste, int id_coda_registro_risposte) {
-    
+
     printf("Registro: Avvio...\n");
 
 
@@ -23,42 +23,51 @@ void registro(int id_coda_registro_richieste, int id_coda_registro_risposte) {
         /* TBD: Prelevare un messaggio dalla coda "id_coda_registro_richieste" */
 
 
-        if(/* TBD: Messaggio di tipo BIND */) {
+        if(/* TBD: Controllare se il messaggio è di tipo BIND */) {
 
-            printf("Registro: Ricevuto messaggio BIND (id_server=%d, id_coda=%d)\n", /* TBD */, /* TBD */);
+            int id_server = /* TBD: prelevare lo ID del server dal messaggio */;
+            int id_coda = /* TBD: prelevare lo ID della coda dal messaggio */;
 
-            if(/* TBD: Controllare che lo ID del server sia 0 oppure 1 */) {
+            printf("Registro: Ricevuto messaggio BIND (id_server=%d, id_coda=%d)\n", id_server, id_coda);
+
+            if(/* TBD: Controllare che lo ID del server sia 1 oppure 2 */) {
                 printf("Registro: ID server non valido\n");
                 continue;
             }
 
-            printf("Registro: Registrazione server %d\n", /* TBD */);
+            printf("Registro: Registrazione server %d\n", id_server);
 
-            id_code_server[/* TBD */] = /* TBD: Memorizzare lo ID della coda */;
+            id_code_server[id_server - 1] = /* TBD: memorizzare nello array lo ID della coda di messaggi del server */;
 
         }
-        else if(/* TBD: Messaggio di tipo QUERY */) {
+        else if(/* TBD: Controllare se il messaggio è di tipo QUERY */) {
 
-            printf("Registro: Ricevuto messaggio QUERY (id_server=%d)\n", /* TBD */);
+            int id_server = /* TBD: prelevare lo ID del server dal messaggio */;
 
-            if(/* TBD: Controllare che lo ID del server sia 0 oppure 1 */) {
+            printf("Registro: Ricevuto messaggio QUERY (id_server=%d)\n", id_server);
+
+            if(/* TBD: Controllare che lo ID del server sia 1 oppure 2 */) {
                 printf("Registro: ID server non valido\n");
                 continue;
             }
 
-            // TBD: Controllare che lo ID del server sia stato precedentemente registrato
-            if(id_code_server[/* TBD */] == 0) {
+            int id_coda = id_code_server[id_server - 1];
+
+            if(id_coda == 0) {
                 printf("Registro: ID server non registrato\n");
                 continue;
             }
 
-            /* TBD: Inviare un messaggio di risposta di tipo RESULT al client,
-             *      tramite la coda "id_coda_registro_risposte" */
+            /* TBD: Inviare un messaggio di risposta al client,
+             *      tramite la coda "id_coda_registro_risposte".
+             *      Nel campo "tipo" della risposta, utilizzare
+             *      lo ID del server (valore 1 oppure 2).
+             */
 
-            printf("Registro: Invio messaggio RESULT (id_coda=%d)\n", /* TBD: ID della coda del server */);
+            printf("Registro: Invio messaggio di risposta (id_server=%d, id_coda=%d)\n", id_server, id_coda);
 
         }
-        else if(/* TBD: Messaggio di tipo EXIT */) {
+        else if(/* TBD: Controllare se il messaggio è di tipo EXIT */) {
 
             printf("Registro: Ricevuto messaggio EXIT\n");
 
@@ -69,7 +78,7 @@ void registro(int id_coda_registro_richieste, int id_coda_registro_risposte) {
                     continue;
                 }
 
-                /* TBD: Inviare un messaggio di tipo EXIT al server, 
+                /* TBD: Inviare un messaggio di tipo EXIT al server,
                  *      tramite la coda "id_code_server[i]"
                  */
 
@@ -80,7 +89,7 @@ void registro(int id_coda_registro_richieste, int id_coda_registro_risposte) {
             printf("Registro: Uscita\n");
 
             /* TBD: Terminare il processo */
-            
+
         }
         else {
 

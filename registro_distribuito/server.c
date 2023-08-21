@@ -7,8 +7,6 @@
 
 void server(int id_coda_registro_richieste, int id_coda_registro_risposte, int id_server) {
 
-    printf("Registro: Server...\n");
-
     int risorsa = 0;
 
     int id_coda_server = /* TBD */
@@ -30,13 +28,15 @@ void server(int id_coda_registro_richieste, int id_coda_registro_risposte, int i
 
 
 
-        if(/* TBD: Messaggio di tipo SERVICE */) {
+        if(/* TBD: Controllare se il messaggio è di tipo SERVICE */) {
 
-            printf("Server: Ricevuto messaggio SERVICE (id_server=%d, valore=%d)\n", id_server, /* TBD */);
+            int valore = /* TBD: Estrarre il valore dal messaggio */
+
+            printf("Server: Ricevuto messaggio SERVICE (id_server=%d, valore=%d)\n", id_server, valore);
 
             risorsa = /* TBD: Assegnare il valore ricevuto alla risorsa */;
         }
-        else if(/* TBD: Messaggio di tipo EXIT */) {
+        else if(/* TBD: Controllare se il messaggio è di tipo EXIT */) {
 
             printf("Server: Ricevuto messaggio EXIT (id_server=%d)\n", id_server);
 
