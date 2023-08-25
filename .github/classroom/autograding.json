@@ -13,7 +13,7 @@
     {
       "name": "Server sincroni multipli",
       "setup": "",
-      "run": "/bin/bash  ./server_sincroni_multiplii/.test/server-sincroni-multipli.sh",
+      "run": "/bin/bash  ./server_sincroni_multipli/.test/server-sincroni-multipli.sh",
       "input": "",
       "output": "pass",
       "comparison": "included",
