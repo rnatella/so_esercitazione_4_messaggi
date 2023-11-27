@@ -1,0 +1,8 @@
+rules:
+  - id: remove_queue
+    languages: [c]
+    severity: ERROR
+    message: "È necessario eliminare le code di messaggio al termine dell'esecuzione utilizzando msgctl() con IPC_RMID."
+    patterns: 
+      - pattern: int main(...){ ... }
+      - pattern-not: int main(...){ ... msgctl($ID1,IPC_RMID,0); msgctl($ID2,IPC_RMID,0); }
