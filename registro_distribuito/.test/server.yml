@@ -2,7 +2,7 @@ rules:
   - id: server_status_service
     languages: [c]
     severity: ERROR
-    message: 'Quando il server riceve un messaggio di tipo SERVICE, occorre che aggiorni il valore della "risorsa" con il valore ricevuto nel messaggio.'
+    message: 'Quando il server riceve un messaggio di tipo SERVICE, occorre che aggiorni il valore della "risorsa" usando il valore ricevuto nel messaggio.'
     patterns:
       - pattern: |
           void server(...){
@@ -17,11 +17,26 @@ rules:
             ...
             if($MSG.$TYPE == $SERVICE) {
               ...
+              int valore = $MSG.$VALUE;
+              ...
+              risorsa = valore;
+              ...
+            }
+            ...
+          }
+      - pattern-not: |
+          void server(...){
+            ...
+            $RET = msgrcv(id_coda_server ,&$MSG ,...);
+            ...
+            if($MSG.$TYPE == $SERVICE) {
+              ...
               risorsa = $MSG.$VALUE;
               ...
             }
             ...
           }
+
 
   - id: server_distinct_queues
     languages: [c]
@@ -62,4 +77,4 @@ rules:
             int id_coda_server = msgget($KEY, ...);
             ...
           }
-          
+
