@@ -22,6 +22,8 @@ void server(int id_coda_registro_richieste, int id_coda_registro_risposte, int i
 
     while(1) {
 
+        printf("Server: RISORSA = %d\n", risorsa);
+
         printf("Server: In attesa di messaggi...\n");
 
         /* TBD: Prelevare un messaggio dalla coda del server */
