@@ -24,8 +24,11 @@ int main() {
 
     for (int i = 0; i < 2; i++)
     {
+
+        int id_server = i+1;
+
         /* TBD: Avviare un processo figlio, e chiamare la funzione:
-         *      server(id_coda_registro_richieste, id_coda_registro_risposte, i);
+         *      server(id_coda_registro_richieste, id_coda_registro_risposte, id_server);
          */
     }
 
