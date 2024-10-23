@@ -2,7 +2,7 @@
   "tests": [
     {
       "name": "Load balancing",
-      "setup": "pip3 -qqq install semgrep && sudo apt -qq install expect 2>/dev/null >/dev/null",
+      "setup": "pip3 -qqq install semgrep==1.76.0 && sudo apt -qq install expect 2>/dev/null >/dev/null",
       "run": "/bin/bash ./load_balancing/.test/load-balancing.sh",
       "input": "",
       "output": "pass",
