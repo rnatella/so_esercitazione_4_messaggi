@@ -14,6 +14,14 @@ rules:
           $A1.$A3 = getpid();
           ...
           ret = msgsnd(req_id ,&$A1, ...);
+      - pattern-not: |
+          int ret; 
+          ...
+          $VAR = getpid();
+          ...
+          $A1.$A3 = $VAR;
+          ...
+          ret = msgsnd(req_id ,&$A1, ...);
 
   - id: send_sinc_queue_id
     languages: [c]
